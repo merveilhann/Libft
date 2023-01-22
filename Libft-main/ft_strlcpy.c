@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: milhan <milhan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/22 17:12:30 by milhan            #+#    #+#             */
+/*   Updated: 2023/01/22 17:12:32 by milhan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	srcsize;
+	size_t	i;
+
+	i = 0;
+	srcsize = ft_strlen(src);
+	if (!src && !dst)
+		return (0);
+	if (dstsize != 0)
+	{
+		while (src[i] && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	dst[i] = '\0';
+	}
+	return (srcsize);
+}
+/*
+
+int main()
+{
+    char a[] = "zeynep";
+    char b[] = "sasmaz";
+   ft_strlcpy(a,b,7);
+    printf("%s",a);
+}*/
